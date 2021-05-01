@@ -1,0 +1,109 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=20
+markup=none
+
+[mediaplayer]
+instance=rhythmbox
+interval=5
+signal=10
+
+#[volume]
+#interval=once
+#signal=10
+
+#[weather]
+#interval=1800
+
+[weather_forecast]
+interval=1800
+signal=10
+color=#8ec07c
+
+[memory]
+label= 
+separator=true
+interval=10
+#color=#a2d2df
+color=#83a598
+
+[cpu_usage]
+label= 
+interval=10
+separator=true
+
+[temperature]
+label= 
+interval=10
+
+#[ssid]
+#label=  
+#INTERFACE=wlp3s0
+#INTERFACE=enp3s0
+#interval=60
+
+[battery]
+interval=60
+
+[time]
+command=date '+%a, %b %e %H:%M:%S'
+interval=5
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#KEY=CAPS
+#markup=pango
+#interval=once
+#signal=11
+
+#[keyindicator]
+#KEY=NUM
+#markup=pango
+#interval=once
+#signal=11
