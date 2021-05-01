@@ -1,0 +1,6 @@
+#!/bin/bash
+
+## to get it use
+## wget -qO- https://git.io/fhQdI | sh
+
+suru-plus-folders -C fitdance -l --theme Suru++

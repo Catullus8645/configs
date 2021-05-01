@@ -1,0 +1,2 @@
+brightnessctl set 25
+shutdown +120
