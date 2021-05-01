@@ -1,2 +1,5 @@
+# sets the brightness to the lowest possible on my laptop (you will probably have to change this)
+# and schedules shutdown in 2 hours
+
 brightnessctl set 25
 shutdown +120
