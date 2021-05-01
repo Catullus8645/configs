@@ -1,0 +1,5 @@
+#!/bin/sh
+# Unzips an archive into a folder of the same name
+zipfile=$1
+folder="${zipfile%.*}"
+unzip "$1" -d "$folder"
