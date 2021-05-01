@@ -1,0 +1,255 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+;background           = #0A0E13
+background-alt       = #9C1D16
+foreground           = #f2e097
+foreground-alt       = #BE5439
+primary              = #5D9094
+secondary            = #6F6F6F
+alert                = #FF0000
+
+;textlight = #83dcc8
+;textdark = #282c34
+;background = #282c34
+
+; RED COLOURSCHEME
+arrow1               = #BE5439
+arrow2               = #9C1D16
+arrow3               = #6e2e20
+arrow4				= #601704
+
+;arrow1               = #CE935D
+;arrow2               = #BE5439
+;arrow3               = #9C1D16
+;arrow4               = #6e2e20
+;background = #000000
+background = #040404
+black = #000000	
+red = #9c1d16
+textlight = #ce935d
+textdark = #000000
+
+; BLUE COLOURSCHEME
+;arrow1 = #81AAFF
+;arrow2 = #83DCC8
+;arrow3 = #68b0a0
+;arrow4 = #68b0a0
+
+[bar/example]
+width = 100%
+height = 22
+;offset-x = 10%
+;offset-y = 1%
+radius = 0.0
+fixed-center = true
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = ${colors.background-alt}
+
+border-size = 0
+border-color = ${colors.background}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left  = 0
+module-margin-right = 0
+
+font-0 = "Terminus:bold:size=15:antialias=true;3"
+;font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
+;font-3 = "WeatherIcons:size=12:style=Solid:pixelsize=10;2"
+;font-4 = "Font Awesome 5 Brands:pixelsize=10;2" 
+font-1 = Iosevka Nerd Font:style=Medium:size=12;3
+font-2 = Iosevka Nerd Font:style=Medium:size=19;5
+
+modules-left    = i3
+modules-center  =  
+;modules-right   = arrow2-right weather arrow3-right ram cpu arrobat w4-right date
+modules-right   = arrow1-right weather arrow2-right ram cpu arrow3-right bat arrow4-right date
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 20
+tray-padding = 0
+tray-scale = 1.0
+tray-background = ${colors.arrow4}
+
+wm-restack = i3
+
+
+;override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+;cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:25:...%
+format-foreground = ${colors.red}
+format-padding = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.red}
+
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-foreground = ${colors.red}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name% 
+label-unfocused-foreground = ${colors.textlight}
+label-unfocused-background = ${colors.background}
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.textdark}
+label-urgent-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format-prefix =
+format-foreground = ${colors.textdark}
+format-background = ${colors.arrow2}
+format-padding = 0
+label = "%percentage:3%%"
+
+[module/ram]
+type = internal/memory
+interval = 5
+format-background = ${colors.arrow2}
+format-foreground = ${colors.textdark}
+format-padding = 1 
+format-prefix = 
+label = "%percentage_used:3%%"
+
+[module/date]
+type = internal/date
+interval = 5
+
+;time = " %a %b %d, %I:%M %p "
+time = "%a, %b %e %H:%M:%S"
+time-alt  = "%d-%m-%Y"
+
+format-foreground = ${colors.textlight}
+format-background = ${colors.arrow4}
+;;format-underline  = ${colors.background}
+format-padding    = 1
+
+format-prefix =   
+label = "%time%"
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini 
+
+[module/weather]
+type = custom/script
+exec = /home/james/.config/i3blocks/weather_forecast/weather_forecast
+interval = 3600
+;label-font = 3
+format-foreground = ${colors.textdark}
+format-background = ${colors.arrow1}
+
+[module/bat]
+type = custom/script
+exec = /home/james/.config/i3blocks/battery/battery
+interval = 10
+format-prefix = " "
+format-foreground = ${colors.textdark}
+format-background = ${colors.arrow3}
+
+[module/arrow1-right]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground  = ${colors.arrow1}
+;;content-underline   = ${colors.background}
+content-padding = 0
+
+[module/arrow2-right]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground  = ${colors.arrow2}
+content-background  = ${colors.arrow1}
+;content-background  = ${colors.background}
+;;content-underline   = ${colors.background}
+content-padding = 0
+
+[module/arrow3-right]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground  = ${colors.arrow3}
+content-background  = ${colors.arrow2}
+;;content-underline   = ${colors.background}
+content-padding = 0
+
+[module/arrow4-right]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground  = ${colors.arrow4}
+content-background  = ${colors.arrow3}
+;;content-underline   = ${colors.background}
+content-padding = 0
