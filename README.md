@@ -14,7 +14,7 @@ Some useful apps
 - lxappearance (for setting gtk theme, place the themes in "~/.themes")
 - alacritty (terminal)
 
-fonts
+Fonts
 - Terminus
 - Nerd fonts (icons)
 - Font Awesome (icons)
