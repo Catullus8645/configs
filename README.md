@@ -1,7 +1,9 @@
 
 ![screenshot](i3_polybar_screenshot.png)
 
-To use the i3blocks scripts, you will need to "chmod +x" them each individually
+Notes
+- Place the .xinitrc file in your home folder and comment/uncomment lines for different configs (this is read when you run "startx" from a tty - you will need to install xorg-xinit)
+- To use the i3blocks scripts and other shell scripts, you will need to "chmod +x" them each individually
 
 Some useful apps
 - volumeicon (the volume app in system tray)
