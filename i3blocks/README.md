@@ -1,2 +1,2 @@
-most of these scripts are from https://github.com/vivien/i3blocks-contrib
-the weather one is https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/statusbar/sb-forecast
+- most of these scripts are from https://github.com/vivien/i3blocks-contrib
+- the weather one is https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/statusbar/sb-forecast
