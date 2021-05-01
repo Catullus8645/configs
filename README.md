@@ -20,4 +20,4 @@ Fonts
 - Terminus
 - Nerd fonts (icons)
 - Font Awesome (icons)
-- note some of these icons conflict with each other, ideally choose one
+- note some of these icons conflict with each other, ideally choose one (I would suggest Nerd fonts)
