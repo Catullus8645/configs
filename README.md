@@ -19,5 +19,10 @@ Some useful apps
 Fonts
 - Terminus
 - Nerd fonts (icons)
+
+Other fonts
+- noto-fonts, noto-fonts-extra, noto-fonts-emoji, noto-fonts-cjk (will cover pretty much any font you might come across online)
+- Share Tech Mono
 - Font Awesome (icons)
+
 - note some of these icons conflict with each other, ideally choose one (I would suggest Nerd fonts)
