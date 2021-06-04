@@ -26,8 +26,11 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # Default bindings
 floating_modifier $mod
 bindsym $mod+Return exec alacritty
+bindsym $sup+Return exec st
 bindsym $mod+q kill
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run -nb '#601704' -sf '#601704' -sb '#ce935d' -nf '#ce935d'
+bindsym $mod+d exec dmenu_run -nb '#000000' -sf '#000000' -sb '#be5439' -nf '#be5439'
 bindsym $mod+x exec i3lock -i ~/Pictures/wallpapers/solid/win95blue.png -f -e
 
 # change focus
@@ -83,13 +86,13 @@ set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
+set $ws5 "5: "
+set $ws6 "6: "
 set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws8 "8: "
+set $ws9 "9: "
 set $ws10 "10: "
-#            
+#            
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -187,7 +190,7 @@ bindsym $sup+e workspace number $ws5, exec "pcmanfm"
 bindsym $sup+c workspace number $ws10, exec "rhythmbox"
 bindsym $sup+f exec "firefox"
 #bindsym $sup+Return exec "cool-retro-term"
-bindsym $sup+Return exec "st"
+#bindsym $sup+Return exec "st"
 bindsym $sup+z resize set 640 360
 bindsym $sup+p exec "maim ~/Pictures/screenshots/$(date +%s).png -i $(xdotool getactivewindow)"
 bindsym $mod+p exec "maim ~/Pictures/screenshots/$(date +%s).png"
