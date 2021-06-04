@@ -77,21 +77,18 @@ module-margin-left  = 0
 module-margin-right = 0
 
 font-0 = "Terminus:bold:size=15:antialias=true;3"
-;font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
-;font-3 = "WeatherIcons:size=12:style=Solid:pixelsize=10;2"
-;font-4 = "Font Awesome 5 Brands:pixelsize=10;2" 
-font-1 = Iosevka Nerd Font:style=Medium:size=12;3
+font-1 = Font Awesome 5 Free Solid:style=Medium:pixelsize=12;3
 font-2 = Iosevka Nerd Font:style=Medium:size=19;5
 
 modules-left    = i3
 modules-center  =  
 ;modules-right   = arrow2-right weather arrow3-right ram cpu arrobat w4-right date
-modules-right   = arrow1-right weather arrow2-right ram cpu arrow3-right bat arrow4-right date
+modules-right   = mediaplayer arrow1-right weather arrow2-right ram cpu arrow3-right bat arrow4-right date
 
 tray-position = right
 tray-detached = false
 tray-maxsize = 20
-tray-padding = 0
+tray-padding = 1
 tray-scale = 1.0
 tray-background = ${colors.arrow4}
 
@@ -144,8 +141,6 @@ label-unfocused-padding = 1
 ; visible = Active workspace on unfocused monitor
 
 label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -160,10 +155,10 @@ label-urgent-padding = 1
 [module/cpu]
 type = internal/cpu
 interval = 5
-format-prefix =
+format-prefix =
 format-foreground = ${colors.textdark}
 format-background = ${colors.arrow2}
-format-padding = 0
+format-padding = 1
 label = "%percentage:3%%"
 
 [module/ram]
@@ -171,8 +166,8 @@ type = internal/memory
 interval = 5
 format-background = ${colors.arrow2}
 format-foreground = ${colors.textdark}
-format-padding = 1 
-format-prefix = 
+format-padding = 0
+format-prefix = 
 label = "%percentage_used:3%%"
 
 [module/date]
@@ -181,12 +176,12 @@ interval = 5
 
 ;time = " %a %b %d, %I:%M %p "
 time = "%a, %b %e %H:%M:%S"
-time-alt  = "%d-%m-%Y"
+time-alt  = "%d/%m/%Y"
 
-format-foreground = ${colors.textlight}
+format-foreground = ${colors.textdark}
 format-background = ${colors.arrow4}
 ;;format-underline  = ${colors.background}
-format-padding    = 1
+format-padding    = 0
 
 format-prefix =   
 label = "%time%"
@@ -221,17 +216,25 @@ interval = 10
 format-prefix = " "
 format-foreground = ${colors.textdark}
 format-background = ${colors.arrow3}
+format-padding = 0
+
+[module/mediaplayer]
+type = custom/script
+exec = /home/james/.config/i3blocks/mediaplayer/mediaplayer
+format-foreground = ${colors.textlight}
+interval = 10
+format-padding = 1
 
 [module/arrow1-right]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-foreground  = ${colors.arrow1}
 ;;content-underline   = ${colors.background}
 content-padding = 0
 
 [module/arrow2-right]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-foreground  = ${colors.arrow2}
 content-background  = ${colors.arrow1}
 ;content-background  = ${colors.background}
@@ -240,7 +243,7 @@ content-padding = 0
 
 [module/arrow3-right]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-foreground  = ${colors.arrow3}
 content-background  = ${colors.arrow2}
 ;;content-underline   = ${colors.background}
@@ -248,7 +251,7 @@ content-padding = 0
 
 [module/arrow4-right]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-foreground  = ${colors.arrow4}
 content-background  = ${colors.arrow3}
 ;;content-underline   = ${colors.background}
