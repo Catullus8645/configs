@@ -25,4 +25,4 @@ Other fonts
 - Share Tech Mono
 - Font Awesome (icons)
 
-- note some of these icons conflict with each other, ideally choose one (I would suggest Nerd fonts)
+- note some of these icons conflict with each other, ideally choose one
