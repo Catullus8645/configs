@@ -24,3 +24,6 @@ Other fonts
 - noto-fonts, noto-fonts-extra, noto-fonts-emoji, noto-fonts-cjk (will cover pretty much any font you might come across online)
 - Share Tech Mono
 - Font Awesome (icons)
+
+Connect to Wifi in installer
+https://www.youtube.com/watch?v=3zqITuprlL8
