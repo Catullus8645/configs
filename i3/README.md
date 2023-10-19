@@ -7,22 +7,26 @@ Most of the mod bindings are to do with window manipulation, while sup bindings 
 - mod+p screenshot whole screen
 - sup+p screenshot focused window
 - mod+shift+space floating mode
-- mod+x lock screen
-
-sup  z    resize 640x360 
+- sup  z    resize 640x360 
 
 ## Application Launchers
-alt  ent  alacritty
-sup  ent  terminator
-alt  d    dmenu
-sup  f    firefox
-sup  e    pcmanfm
-sup  l    spotify
-sup  u    units
-sup  p    python
-sup  k    ksnip
-alt  p    screenshot
+- alt  ent  alacritty
+- sup  ent  terminator
+- alt  d    dmenu
+- sup  f    firefox
+- sup  e    pcmanfm
+- sup  l    spotify
+- sup  b    slack
+- sup  k    ksnip
+
+## Floating terminal apps
+- sup  p    python
+- sup  u    units
+
+## Script runners
+- sup  p    maim screenshot (full screen)
+- alt  x    lock screen
 
 ### Not currently installed
-sup  c    qalculate-gtk
-sup  x    calcurse
+- sup  c    qalculate-gtk
+- sup  x    calcurse
