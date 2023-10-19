@@ -1,7 +1,7 @@
 set $mod Mod1
 set $sup Mod4
 
-font pango:DejaVu Sans Bold 11
+font pango:DejaVu Sans Bold 14
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -9,8 +9,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Set media keys
 set $refresh_i3status killall -SIGUSR1 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -26,10 +26,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # Default bindings
 floating_modifier $mod
 bindsym $mod+Return exec alacritty
-bindsym $sup+Return exec st
+bindsym $sup+Return exec terminator
 bindsym $mod+q kill
-#bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec dmenu_run -nb '#601704' -sf '#601704' -sb '#ce935d' -nf '#ce935d'
 bindsym $mod+d exec dmenu_run -nb '#000000' -sf '#000000' -sb '#be5439' -nf '#be5439'
 bindsym $mod+x exec i3lock -i ~/Pictures/wallpapers/solid/win95blue.png -f -e
 
@@ -86,13 +84,13 @@ set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
-set $ws5 "5: "
+set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
-set $ws8 "8: "
+set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10: "
-#            
+#            
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -120,34 +118,36 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
 # Numlock is OFF
-bindsym KP_End workspace number $ws1
-bindsym KP_Down workspace number $ws2
-bindsym KP_Next workspace number $ws3
-bindsym KP_Left workspace number $ws4
-bindsym KP_Begin workspace number $ws5
-bindsym KP_Right workspace number $ws6
-bindsym KP_Home workspace number $ws7
-bindsym KP_Up workspace number $ws8
-bindsym KP_Prior workspace number $ws9
+#bindsym KP_End workspace number $ws1
+#bindsym KP_Down workspace number $ws2
+#bindsym KP_Next workspace number $ws3
+#bindsym KP_Left workspace number $ws4
+#bindsym KP_Begin workspace number $ws5
+#bindsym KP_Right workspace number $ws6
+#bindsym KP_Home workspace number $ws7
+#bindsym KP_Up workspace number $ws8
+#bindsym KP_Prior workspace number $ws9
+#bindsym KP_Insert workspace number $ws10
 
-bindsym $mod+KP_End move container to workspace number $ws1
-bindsym $mod+KP_Down move container to workspace number $ws2
-bindsym $mod+KP_Next move container to workspace number $ws3
-bindsym $mod+KP_Left move container to workspace number $ws4
-bindsym $mod+KP_Begin move container to workspace number $ws5
-bindsym $mod+KP_Right move container to workspace number $ws6
-bindsym $mod+KP_Home move container to workspace number $ws7
-bindsym $mod+KP_Up move container to workspace number $ws8
-bindsym $mod+KP_Prior move container to workspace number $ws9
+#bindsym $mod+KP_End move container to workspace number $ws1
+#bindsym $mod+KP_Down move container to workspace number $ws2
+#bindsym $mod+KP_Next move container to workspace number $ws3
+#bindsym $mod+KP_Left move container to workspace number $ws4
+#bindsym $mod+KP_Begin move container to workspace number $ws5
+#bindsym $mod+KP_Right move container to workspace number $ws6
+#bindsym $mod+KP_Home move container to workspace number $ws7
+#bindsym $mod+KP_Up move container to workspace number $ws8
+#bindsym $mod+KP_Prior move container to workspace number $ws9
+#bindsym $mod+KP_Insert move container to workspace number $ws10
 
 # These work regardless of whether the numlock is on or off
-bindsym KP_Divide floating toggle
-bindsym KP_Multiply resize set 960 540 
-bindsym KP_Subtract fullscreen toggle 
-bindsym KP_Add exec alacritty 
-# bindsym KP_Enter 
-bindsym KP_Delete kill
-bindsym KP_Insert exec firefox 
+#bindsym KP_Divide workspace number $ws7 exec alacritty -e 'calcurse'
+#bindsym KP_Multiply exec firefox 
+#bindsym KP_Subtract resize set 960 540
+#bindsym KP_Add floating toggle
+#bindsym KP_Enter fullscreen toggle
+#bindsym KP_Delete floating toggle
+#bindsym KP_Insert fullscreen toggle
 
 
 # reload the configuration file
@@ -164,10 +164,10 @@ mode "resize" {
         bindsym j resize grow height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
 		bindsym l resize grow width 5 px or 5 ppt
-        bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Down resize grow height 1 px or 1 ppt
-        bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -182,33 +182,54 @@ bindsym $mod+r mode "resize"
 # And use the second WM_CLASS(STRING) value
 # assign [class="code-oss"] $ws3
 assign [class="Pcmanfm"] $ws5
-assign [class="Zoom"] $ws7
+assign [class="zoom"] $ws7
 assign [class="Rhythmbox"] $ws10
+assign [class="Slack"] $ws8
+assign [class="MATLAB R2021a - academic use"] $ws3
+assign [class="Spotify"] $ws10
+assign [class="Com.cisco.anyconnect.gui"] $ws9
 
 # Launch appication shortcuts
 bindsym $sup+e workspace number $ws5, exec "pcmanfm"
-bindsym $sup+c workspace number $ws10, exec "rhythmbox"
+#bindsym $sup+c workspace number $ws10, exec "rhythmbox"
+bindsym $sup+c workspace number $ws10, exec "spotify"
 bindsym $sup+f exec "firefox"
+bindsym $sup+Shift+f exec "firefox --private-window"
 #bindsym $sup+Return exec "cool-retro-term"
-#bindsym $sup+Return exec "st"
 bindsym $sup+z resize set 640 360
-bindsym $sup+p exec "maim ~/Pictures/screenshots/$(date +%s).png -i $(xdotool getactivewindow)"
 bindsym $mod+p exec "maim ~/Pictures/screenshots/$(date +%s).png"
 bindsym $sup+space exec "~/scripts/night"
-bindsym $sup+x workspace number $ws8, exec "alacritty -e calcurse"
-bindsym $sup+k workspace number $ws6, exec "qalculate-gtk"
+bindsym $sup+x workspace number $ws7, exec "alacritty -e calcurse"
+#bindsym $sup+k workspace number $ws6, exec "qalculate-gtk"
+bindsym $sup+b workspace number $ws8, exec "slack"
+bindsym $mod+c workspace number $ws7 exec alacritty -e 'calcurse'
+bindsym $sup+l workspace number $ws10, exec "spotify"
+
+## FLOATING TERMINAL APPS
+bindsym $sup+u exec "terminator -T units -e units"
+for_window [title="units"] floating enable, sticky enable, resize set 400 300, move position 1520 px 372 px
+
+bindsym $sup+k exec "ksnip"
+for_window [title="ksnip"] floating enable, sticky enable, resize set 590 px 56 px, move position 1330 px 22 px
+
+bindsym $sup+p exec "terminator -T python -e python"
+for_window [title="python"] floating enable, sticky enable, resize set 400 px 350 px, move position 1520 px 22 px
 
 # Specific Hardware Buttons
+# these can be found in /usr/include/X11/XF86keysym.h however they dont work
+# use xev instead
 bindsym XF86_Calculator exec alacritty -e 'python'
-bindsym XF86Launch1 exec poweroff
-#bindsym XF86Back move left
-#bindsym XF86Forward move right
-bindsym XF86Back workspace prev
-bindsym XF86Forward workspace next
-
+# For thinkpad button bindsym XF86Launch1 exec poweroff
+bindsym XF86Back worspace prev
+bindsym XF86Forward move next
 bindsym XF86ScreenSaver exec i3lock -i ~/Pictures/wallpapers/neon/snow_square.png -f -e
-bindsym --whole-window button8 move right
-bindsym --whole-window button9 move left
+#bindsym XF86XK_AudioMedia workspace number $ws10, exec rhythmox
+#bindsym XF86HomePage workspace number $ws10, exec "spotify"
+bindsym XF86HomePage exec st -e 'units'
+
+#bindsym --whole-window button8 move right
+#bindsym --whole-window button9 move left
+
 # Rebind side buttons to volume control
 #bindsym button8 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
 #bindsym button9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
@@ -239,7 +260,10 @@ default_border pixel 1
 for_window [class="^.*"] border pixel 1
 
 # Gaps settings
-# smart_gaps on
+#smart_gaps on
+#set $inner_gaps 17
+#set $outer_gaps 0
+
 set $inner_gaps 0
 set $outer_gaps 0
 gaps inner $inner_gaps
@@ -250,23 +274,29 @@ bindsym $sup+Shift+s		gaps inner current minus 5;
 bindsym $sup+Shift+r		gaps inner current set 17; gaps outer current set 0
 bindsym $sup+r				gaps inner current set 0; gaps outer current set 0
 
-#workspace $ws1 output VGA-1
-#workspace $ws2 output VGA-1
-#workspace $ws3 output VGA-1
-#workspace $ws4 output VGA-1
-#workspace $ws5 output VGA-1
-#workspace $ws6 output VGA-1
-#workspace $ws7 output VGA-1
-#workspace $ws8 output VGA-1
-#workspace $ws9 output VGA-1
-#workspace $ws10 output LVDS-1
+workspace $ws1 output eDP 
+workspace $ws2 output eDP 
+workspace $ws3 output eDP 
+workspace $ws4 output eDP 
+workspace $ws5 output eDP 
+workspace $ws6 output eDP 
+#workspace $ws7 output eDP 
+workspace $ws7 output DisplayPort-0
+workspace $ws8 output eDP
+workspace $ws9 output eDP
+workspace $ws10 output eDP
+
+for_window [class="zoom" instance="zoom"] floating enable
+#for_window [class="st-256color" instance="st-256color"] floating enable
 
 # Startup applications
 exec --no-startup-id nm-applet
-#exec --no-startup-id blueman-applet
-#exec --no-startup-id redshift-gtk
+exec --no-startup-id blueman-applet
+exec_always volumeicon
+exec --no-startup-id redshift-gtk
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom
 exec --no-startup-id ~/scripts/keyboard
-exec --no-startup-id volumeicon
+exec --no-startup-id ~/.screenlayout/twoscreen.sh 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
