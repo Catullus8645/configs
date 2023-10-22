@@ -16,6 +16,10 @@ Some useful apps
 - lxappearance (for setting gtk theme, place the themes in "~/.themes")
 - alacritty (terminal)
 
+- spotify-tui
+- todo.txt
+- pandoc (document converter)
+
 Fonts
 - Terminus
 - Nerd fonts (icons)
